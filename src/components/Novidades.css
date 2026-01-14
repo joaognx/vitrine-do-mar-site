@@ -53,13 +53,14 @@
 
 .novidades {
     display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 20px 0;
+    overflow-x: auto; 
+    scroll-behavior: smooth; 
     list-style: none;
-    width: 100%;
+    padding: 0;
+    gap: 15px;
+    -webkit-overflow-scrolling: touch; 
 }
+
 
 .novidades::-webkit-scrollbar {
     display: none;
@@ -127,4 +128,31 @@
   border: none;
   background: #fff;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .container-carrossel {
+        position: relative;
+        padding: 0 10px;
+    }
+
+    .itens {
+        flex: 0 0 75%; /* Mostra um card quase inteiro e um pedaço do próximo */
+        min-width: 250px; /* Garante que o card não fique pequeno demais */
+    }
+
+    /* Esconde as setas no mobile, já que o touch é mais intuitivo */
+    .seta {
+        display: none;
+    }
+
+    .tit-nov {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    
+    /* Ajusta o overlay para mobile (opcional) */
+    .overlay-nov h3 {
+        font-size: 1rem;
+    }
 }

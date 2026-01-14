@@ -25,6 +25,7 @@
     position: relative; 
     overflow: hidden;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .popular-card img {
@@ -64,4 +65,31 @@
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+/* Media Query para Tablets (até 992px) */
+@media (max-width: 992px) {
+    .popular-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+        gap: 10px;
+    }
+}
+
+/* Media Query para Celulares (até 480px) */
+@media (max-width: 480px) {
+    .popular-section {
+        padding: 40px 10px; /* Reduz o espaçamento lateral */
+    }
+
+    .popular-grid {
+        grid-template-columns: 1fr 1fr; /* 1 coluna (ocupa a largura toda) */
+    }
+
+    .titulo-secao {
+        font-size: 20px; /* Diminui um pouco o título no celular */
+    }
+
+    .overlay h3 {
+        font-size: 1rem; /* Ajusta o texto da imagem */
+    }
 }
