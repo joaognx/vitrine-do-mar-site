@@ -78,3 +78,45 @@
 .menu a:hover {
   color: #f4e4b7;
 }
+/* ===================== */
+/* MENU HAMBÚRGUER       */
+/* ===================== */
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #154374;
+}
+
+/* ===================== */
+/* MOBILE                */
+/* ===================== */
+
+@media (max-width: 768px) {
+
+  .search {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: white;
+    border-top: 1px solid rgba(31, 103, 180, 0.2);
+  }
+
+  .menu.ativo {
+    display: flex;
+  }
+
+  .menu a {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid rgba(31, 103, 180, 0.15);
+  }
+}

@@ -4,10 +4,10 @@ import "./Carousel.css";
 export default function Carousel() {
 
   const images = [
-    "logobege.jpeg",
-    "logoazul.jpeg",
-    "logobege.jpeg",
-    "logoazul.jpeg",
+    "logobege.png",
+    "logoazul.png",
+    "logobege.png",
+    "logoazul.png",
   ];
 
   const carouselRef = useRef(null);

@@ -1,55 +1,67 @@
-
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import './Topo.css'
 
-
 function Topo() {
-  
+
+  const [menuAberto, setMenuAberto] = useState(false);
+
   const menu = [
-    {nome:"Início", link: "/"},
-    {nome:"Biquínis", link: "/biquinis"},
-    {nome:"Maiôs", link: "/maios"},
-    {nome:"Vestidos", link: "/vestidos"},
-    {nome:"Masculino", link: "/masculino"},
-    {nome:"Acessórios", link: "/acessorios"},
-    {nome:"Infantil", link: "/infantil"}
-  ]
-  
+    { nome: "Início", link: "/" },
+    { nome: "Biquínis", link: "/biquinis" },
+    { nome: "Maiôs", link: "/maios" },
+    { nome: "Vestidos", link: "/vestidos" },
+    { nome: "Masculino", link: "/masculino" },
+    { nome: "Acessórios", link: "/acessorios" },
+    { nome: "Infantil", link: "/infantil" }
+  ];
 
   return (
-      <header className='header'>
+    <header className='header'>
 
-        <div className='topbar'>
+      <div className='topbar'>
 
-          <div className='left'>
-            <input
-              className="search"
-              type="text"
-              placeholder="O que você está buscando?"
-            />
-          </div>
-
-          <Link to="/" className='center'>
-            <img src="logospng.png" alt="Vitrine do Mar" className='logo' />
-          </Link>
-
-
-          <div className="right">
-            <a href='#'>Meu Carrinho</a>
-            <a href='#'>Minha Conta</a>
-          </div>
+        <div className='left'>
+          <input
+            className="search"
+            type="text"
+            placeholder="O que você está buscando?"
+          />
         </div>
 
-        <nav className='menu'>
-          {menu.map((tipo, i) => (
-          <Link to={tipo.link} key={i}>{tipo.nome}</Link>
-          ))}
-        </nav>
+        <Link to="/" className='center'>
+          <img src="logospng.png" alt="Vitrine do Mar" className='logo' />
+        </Link>
 
-      </header>
+        <div className="right">
+          <a href='#'>Meu Carrinho</a>
+          <a href='#'>Minha Conta</a>
 
-    
-  )
+          {/* BOTÃO HAMBÚRGUER */}
+          <div
+            className="hamburger"
+            onClick={() => setMenuAberto(!menuAberto)}
+          >
+            ☰
+          </div>
+        </div>
+      </div>
+
+      {/* MENU */}
+      <nav className={`menu ${menuAberto ? 'ativo' : ''}`}>
+        {menu.map((tipo, i) => (
+          <Link
+            to={tipo.link}
+            key={i}
+            onClick={() => setMenuAberto(false)}
+          >
+            {tipo.nome}
+          </Link>
+        ))}
+      </nav>
+
+    </header>
+  );
 }
 
-export default Topo
+export default Topo;
