@@ -1,0 +1,33 @@
+.troca {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.troca h2 {
+  margin-bottom: 20px;
+  color:  #154374;;
+}
+
+.troca p {
+  margin-bottom: 14px;
+  line-height: 1.6;
+  font-weight: normal;
+}
+
+.alerta {
+  font-weight: 600;
+}
+
+.contato {
+  margin-top: 20px;
+}
+
+.lista-troca {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.lista-troca li {
+  margin-bottom: 8px;
+}

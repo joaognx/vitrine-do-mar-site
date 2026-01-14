@@ -1,0 +1,62 @@
+.politica {
+  max-width: 900px;            /* igual às outras páginas */
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Título principal */
+.politica h1 {
+  color: #154374;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Subtítulos */
+.politica h2 {
+  color: #154374;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Container */
+.politica-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Texto padrão */
+.politica p {
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: normal;
+  color: #333;
+}
+
+/* Listas */
+.politica ul {
+  padding-left: 20px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+.politica li {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+/* Destaques */
+.politica strong {
+  color: #154374;
+  font-weight: 600;
+}
+
+/* Data / rodapé do texto */
+.politica .data {
+  margin-top: 24px;
+  font-size: 14px;
+  color: #666;
+}

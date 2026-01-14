@@ -1,0 +1,130 @@
+.nov {
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.tit-nov {
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.container-carrossel {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.seta {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.seta:hover {
+    background-color: #fff;
+}
+
+.seta-esq {
+    left: 10px;
+}
+
+.seta-dir {
+    right: 10px;
+}
+
+
+.novidades {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+    list-style: none;
+    width: 100%;
+}
+
+.novidades::-webkit-scrollbar {
+    display: none;
+}
+
+.novidades li {
+  position: relative;
+  
+  width: 22vw; 
+  min-width: 120px; 
+  aspect-ratio: 1 / 1; 
+  flex: 0 0 250px;
+
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.novidades img.teste {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+}
+
+.novidades li:hover img {
+  transform: scale(1.08);
+}
+
+/* OVERLAY */
+.overlay-nov {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  padding: 8px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.novidades li:hover .overlay-nov {
+  opacity: 1;
+}
+
+.overlay-nov h3 {
+  font-size: 13px;
+  margin: 0;
+}
+
+.overlay-nov h4 {
+  font-size: 12px;
+  margin: 4px 0 6px;
+}
+
+.btn-comprar {
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 14px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+}
