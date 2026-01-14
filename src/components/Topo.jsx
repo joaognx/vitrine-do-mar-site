@@ -20,7 +20,14 @@ function Topo() {
     <header className='header'>
 
       <div className='topbar'>
-
+        
+         <div
+            className="hamburger"
+            onClick={() => setMenuAberto(!menuAberto)}
+          >
+            ☰
+          </div>
+          
         <div className='left'>
           <input
             className="search"
@@ -36,14 +43,6 @@ function Topo() {
         <div className="right">
           <a href='#'>Meu Carrinho</a>
           <a href='#'>Minha Conta</a>
-
-          {/* BOTÃO HAMBÚRGUER */}
-          <div
-            className="hamburger"
-            onClick={() => setMenuAberto(!menuAberto)}
-          >
-            ☰
-          </div>
         </div>
       </div>
 
