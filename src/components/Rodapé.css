@@ -1,71 +1,51 @@
 .menu-ajuda {
-    background-color: #f4e4b7;
-    color: #fff;
+  background-color: #f4e4b7;
+  color: #fff;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 
-    padding: 40px 80px;
+  padding: 40px 80px;
 }
 
-
-.menu-ajuda h2{
-    display: block;
-    color: #154374;
-}
-.menu-ajuda li {
-    display: block;
+/* Títulos */
+.menu-ajuda h2 {
+  color: #154374;
+  margin-bottom: 15px;
 }
 
-
-
+/* Lista */
 .menu-ajuda ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .menu-ajuda li {
-    width: 100%;
-    margin-bottom: 10px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
-
+/* Links */
 .menu-ajuda a {
-    display: block;
-    width: fit-content;
-
-    color: #154374;
-    text-decoration: none;
-    font-size: 14px;
+  display: inline-block;
+  color: #154374;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
 }
 
 .menu-ajuda a:hover {
-    color: #fff;
+  color: #fff;
 }
 
-.menu-ajuda {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+
+.menu-ajuda a:hover {
+  color: #fff;
 }
 
-.menu-ajuda li {
-    display: block !important;
-    flex: none !important;
-    width: 100% !important;
-}
-
-.menu-ajuda a {
-    display: block !important;
-    float: none !important;
-}
-
-.menu-ajuda li + li {
-    margin-top: 10px;
-}
-
+/* Scroll suave */
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
