@@ -5,8 +5,6 @@ import { CircleUser } from 'lucide-react';
 import { Link, useNavigate } from "react-router-dom";
 import './Topo.css'
 
-
-
 function Topo() {
   const [menuAberto, setMenuAberto] = useState(false);
   const [carrinhoAberto, setCarrinhoAberto] = useState(false);

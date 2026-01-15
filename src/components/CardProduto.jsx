@@ -11,7 +11,7 @@ export default function CardProduto({produto}) {
 
             <span className='preco'>R$ {produto.price.toFixed(2)}</span>
 
-            <button >Adicionar ao carirnho</button>
+            <button >Adicionar à sacola</button>
         </div>
               
 
