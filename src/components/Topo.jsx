@@ -93,7 +93,6 @@ function Topo() {
         ></div>
       )}
 
-      {menuAberto && <div className="overlay" onClick={() => setMenuAberto(false)}></div>}
     </header>
 
 
