@@ -2,28 +2,22 @@ import './Filtros.css'
 
 export default function Filtros({
   produtos,
-  busca,
-  setBusca,
   categoria,
   setCategoria,
-  preco,
-  setPreco
 }) {
+  const categoriasUnicas = [...new Set(produtos.map(p => p.category?.name))].filter(Boolean);
 
-  const categorias = [...new Set(produtos.map(p => p.category))]
   return (
-    <div className='controles' >
-
+    <div className='controles'>
       <select value={categoria} onChange={e => setCategoria(e.target.value)}>
-
         <option value="">Todas as categorias</option>
 
-        {categorias.map(cat => (
-          <option key={cat} value={cat}>{cat}</option>
+        {categoriasUnicas.map(catNome => (
+          <option key={catNome} value={catNome}>
+            {catNome} 
+          </option>
         ))}
       </select>
-
-      
     </div>
   );
 }

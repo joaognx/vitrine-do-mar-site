@@ -96,7 +96,7 @@
   .card-produto img {
 
     height: 280px; 
-    object-fit: contain; 
+    object-fit: cover; 
     background-color: #fff;
     margin-bottom: 12px;
   }

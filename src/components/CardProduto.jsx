@@ -5,7 +5,7 @@ export default function CardProduto({produto}) {
 
 
         <div className="card-produto">
-            <img src={produto.image} alt ={produto.title}/>
+            <img src={produto.images} alt ={produto.title}/>
             
             <h2>{produto.title}</h2>
 

@@ -8,9 +8,10 @@ import './Topo.css'
 function Topo() {
   const [menuAberto, setMenuAberto] = useState(false);
   const [carrinhoAberto, setCarrinhoAberto] = useState(false);
-
   const [busca, setBusca] = useState("")
   const navigate = useNavigate();
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const handleBusca = (e) => {
     if (e.key === 'Enter' && busca.trim() !== "") {
@@ -29,6 +30,13 @@ function Topo() {
     { nome: "Infantil", link: "/categoria/infantil" }
   ];
 
+  
+  useEffect(() => {
+    fetch('https://api.escuelajs.co/api/v1/categories')
+      .then(res => res.json())
+      .then(data => {setCategories(data); setLoading(false);})
+      .catch((()=> setCategories([])))
+  }, []);
 
   useEffect(() => {
     if (menuAberto) {
@@ -83,14 +91,15 @@ function Topo() {
       </div>
 
       <nav className={`menu ${menuAberto ? 'ativo' : ''}`}>
+        <Link to="/" onClick={() => setMenuAberto(false)}>Início</Link>
 
-        {menu.map((tipo, i) => (
+        {categories.map((cat) => (
           <Link
-            to={tipo.link}
-            key={i}
+            to={`/categoria/${cat.name}`}
+            key={cat.id}
             onClick={() => setMenuAberto(false)}
           >
-            {tipo.nome}
+            {cat.name}
           </Link>
         ))}
 

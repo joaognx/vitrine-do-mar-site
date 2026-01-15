@@ -7,12 +7,12 @@ export default function Novidades() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products?limit=10')
+        fetch('https://api.escuelajs.co/api/v1/products?offset=0&limit=10')
             .then(res => res.json())
             .then(json => {
-                const ordenados = json.sort((a, b) => b.id - a.id);
-                const novidades = ordenados.slice(0, 8);
-                setProdutos(novidades)
+                /*const ordenados = json.sort((a, b) => b.id - a.id);
+                const novidades = ordenados.slice(0, 8);*/
+                setProdutos(json)
                 setLoading(false);
             })
             .catch(err => console.error("Erro ao carregar novidades:", err))
@@ -40,7 +40,7 @@ export default function Novidades() {
                 <ul className="novidades" ref={carrossel}>
                     {produtos.map((item) => (
                         <li key={item.id} className="itens">
-                            <img src={item.image} alt={item.title} className='teste' />
+                            <img src={item.images} alt={item.title} className='teste' />
                             <div className="overlay-nov">
                                 <h3>{item.title}</h3>
                                 <h4>R${item.price.toFixed(2)}</h4>
