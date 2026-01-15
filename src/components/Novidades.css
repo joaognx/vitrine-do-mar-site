@@ -137,11 +137,10 @@
     }
 
     .itens {
-        flex: 0 0 75%; /* Mostra um card quase inteiro e um pedaço do próximo */
-        min-width: 250px; /* Garante que o card não fique pequeno demais */
+        flex: 0 0 75%;
+        min-width: 250px; 
     }
 
-    /* Esconde as setas no mobile, já que o touch é mais intuitivo */
     .seta {
         display: none;
     }
@@ -151,7 +150,6 @@
         margin-bottom: 20px;
     }
     
-    /* Ajusta o overlay para mobile (opcional) */
     .overlay-nov h3 {
         font-size: 1rem;
     }
