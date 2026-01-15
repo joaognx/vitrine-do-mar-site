@@ -1,7 +1,7 @@
 
 html.no-scroll,
 body.no-scroll {
-  overflow: hidden !important;
+  overscroll-behavior: none;
   width: 100%;
 }
 /*----------------------------------------------------------------------*/
@@ -51,7 +51,7 @@ body {
 }
 
 .logo{
-  max-height: 150px;        
+  max-height: 80px;        
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -136,7 +136,7 @@ body {
   }
 
   .logo {
-    max-height: 120px; 
+    max-height: 50px; 
   }
 
   .search {
