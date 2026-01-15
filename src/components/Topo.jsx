@@ -68,9 +68,6 @@ function Topo() {
         </div>
       </div>
 
-
-
-      
         <nav className={`menu ${menuAberto ? 'ativo' : ''}`}>
 
           {menu.map((tipo, i) => (

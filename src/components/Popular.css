@@ -67,7 +67,7 @@
     text-transform: uppercase;
 }
 
-@media (max-width: 9768px) {
+@media (max-width: 976px) {
     .popular-grid {
         grid-template-columns: repeat(2, 1fr); 
         gap: 10px;
