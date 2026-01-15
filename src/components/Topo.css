@@ -1,7 +1,7 @@
 
 html.no-scroll,
 body.no-scroll {
-  overflow: hidden !important;
+  overflow-y: hidden !important;
   height: 100% !important;
   position: fixed; 
   width: 100%;
@@ -53,12 +53,11 @@ body {
 }
 
 .logo{
-  max-height: 150px;        
+  max-height: 80px;        
   width: auto;
   height: auto;
-  object-fit: cover;
-  overflow: hidden;
-  transform-origin: center;
+  object-fit: contain;
+  
 }
 
 
@@ -138,7 +137,7 @@ body {
   }
 
   .logo {
-    max-height: 120px; 
+    max-height: 45px; 
   }
 
   .search {

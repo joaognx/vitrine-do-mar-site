@@ -51,10 +51,12 @@ function Topo() {
 
 
         </div>
-
+        
+        <div className="foto">
         <Link to="/" className='center'>
           <img src="logospng.png" alt="Vitrine do Mar" className='logo' />
         </Link>
+        </div>
 
 
         <div className="right">
