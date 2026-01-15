@@ -52,9 +52,7 @@ function Topo() {
 
         </div>
 
-        <Link to="/" className='center'>
-          <img src="logospng.png" alt="Vitrine do Mar" className='logo' />
-        </Link>
+      
 
 
         <div className="right">
