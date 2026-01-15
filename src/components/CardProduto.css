@@ -1,0 +1,123 @@
+
+.card-produto {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #eee;
+  position: relative;
+  overflow: hidden;
+  max-width: 280px;
+}
+
+.card-produto:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-produto img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover; 
+  border-radius: 8px;
+  margin-bottom: 16px;
+  background-color: #f9f9f9;
+}
+
+.card-produto h2 {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 600;
+  line-height: 1.2em;
+  
+
+  min-height: 3.6em; 
+
+  
+  display: -webkit-box;
+  -webkit-line-clamp: 3;           
+  -webkit-box-orient: vertical;    
+  overflow: hidden;                
+  text-overflow: ellipsis;
+}
+
+.card-produto .preco {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a365d; 
+  margin-bottom: 16px;
+}
+
+.card-produto button {
+  background-color: #1a365d;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  width: 100%;
+}
+
+
+.card-produto button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.card-produto::after {
+  content: "Ver Detalhes";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4px 8px;
+  font-size: 0.7rem;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-produto:hover::after {
+  opacity: 1;
+}
+
+
+
+
+@media (max-width: 480px) {
+  .card-produto {
+    max-width: 100%; 
+    padding: 10px;   
+  }
+
+  .card-produto img {
+    height: 200px; 
+    margin-bottom: 10px;
+  }
+
+  .card-produto h2 {
+    font-size: 0.9rem; 
+    margin-bottom: 4px;
+  }
+
+  .card-produto .preco {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .card-produto button {
+    padding: 10px 5px;
+    font-size: 0.8rem; 
+  }
+
+  .card-produto:hover {
+    transform: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+}

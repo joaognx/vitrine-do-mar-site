@@ -24,7 +24,7 @@
 .popular-card {
     position: relative; 
     overflow: hidden;
-    cursor: pointer;
+    cursor: auto;
     border-radius: 10px;
 }
 
@@ -65,6 +65,15 @@
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
+
+    & a{
+        text-decoration: none;
+        color: #154374;
+    }
+
+    & a:hover{
+        color:#f4e4b7;
+    }
 }
 
 @media (max-width: 976px) {

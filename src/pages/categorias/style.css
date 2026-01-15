@@ -1,0 +1,64 @@
+:root {
+  --azul-marinho: #1a5276;
+  --azul-claro: #d1f2eb;
+  --cor-areia: #fcf3cf;
+  --texto: #2c3e50;
+  --branco: #ffffff;
+}
+
+.container-cat {
+  flex: 1; 
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 70vh; 
+  background-color: #f8fbfb;
+  color: var(--texto);
+}
+
+.container-cat h2 {
+  text-align: center;
+  color: #1a365d;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #f4e4b7;
+  padding-bottom: 15px;
+}
+
+/* Grid de produtos idêntico ao da Home */
+.container-cat .produtos-grid { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+/* Estilização para o estado sem resultados */
+.sem-resultados {
+  text-align: center;
+  padding: 60px;
+  background-color: var(--cor-areia);
+  border-radius: 8px;
+  color: #1a365d;
+  font-weight: bold;
+}
+
+/* Responsividade mantendo o padrão */
+@media (max-width: 768px) {
+  .container-busca {
+    padding: 20px 10px;
+  }
+  
+  .container-busca .produtos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+  }
+
+  .container-busca h2 {
+    font-size: 1.2rem;
+  }
+}

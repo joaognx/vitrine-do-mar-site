@@ -1,33 +1,29 @@
 import './Filtros.css'
 
-export default function Filtros() {
+export default function Filtros({
+  produtos,
+  busca,
+  setBusca,
+  categoria,
+  setCategoria,
+  preco,
+  setPreco
+}) {
+
+  const categorias = [...new Set(produtos.map(p => p.category))]
   return (
-    <aside className="filtros">
-      
-      <select className="ordenar">
-        <option>Ordenar</option>
-        <option>Menor preço</option>
-        <option>Maior preço</option>
+    <div className='controles' >
+
+      <select value={categoria} onChange={e => setCategoria(e.target.value)}>
+
+        <option value="">Todas as categorias</option>
+
+        {categorias.map(cat => (
+          <option key={cat} value={cat}>{cat}</option>
+        ))}
       </select>
 
-      <div className="filtro-grupo">
-        <h3>Departamento</h3>
-        <label><input type="checkbox" /> feminino</label>
-        <label><input type="checkbox" /> masculino</label>
-      </div>
-
-      <div className="filtro-grupo">
-        <h3>Estamparia</h3>
-        <label><input type="checkbox" /> estampado</label>
-        <label><input type="checkbox" /> liso</label>
-      </div>
-
-      <div className="filtro-grupo">
-        <h3>Gênero</h3>
-        <label><input type="checkbox" /> feminino</label>
-        <label><input type="checkbox" /> masculino</label>
-      </div>
-
-    </aside>
+      
+    </div>
   );
 }

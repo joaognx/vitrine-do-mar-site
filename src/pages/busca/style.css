@@ -1,0 +1,50 @@
+
+.container-busca {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 70vh;
+}
+
+
+.container-busca h2 {
+  text-align: center;
+  color: #1a365d;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #f4e4b7;
+  padding-bottom: 15px;
+}
+
+
+.container-busca h2 span {
+  color: #f4e4b7; 
+  font-style: italic;
+}
+
+
+.mensagem-vazia {
+  text-align: center;
+  padding: 50px;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+/* Responsividade */
+@media (max-width: 768px) {
+  .container-busca {
+    padding: 20px 15px;
+  }
+  
+  .container-busca h2 {
+    font-size: 1.4rem;
+  }
+}

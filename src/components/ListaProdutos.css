@@ -1,0 +1,10 @@
+.produtos{
+    display: grid;
+    grid-template-columns: repeat (auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.mensagem{
+    text-align: center;
+    font-size: 1.2rem;
+}

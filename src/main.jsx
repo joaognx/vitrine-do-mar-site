@@ -6,39 +6,46 @@ import SobreNos from './pages/sobrenos/index.jsx'
 import Trocas from './pages/trocas/index.jsx'
 import Contato from './pages/contato/index.jsx'
 import Privacidade from './pages/privacidade/index.jsx'
-import Biquinis from './pages/biquínis/index.jsx'
+import Categoria from './pages/categorias/index.jsx'
+import PaginaBusca from './pages/busca/index.jsx'
+
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Initial/>
+    element: <Initial />
   },
 
   {
     path: "/sobre",
-    element: <SobreNos/>
+    element: <SobreNos />
   },
 
   {
     path: "/troca",
-    element: <Trocas/>
+    element: <Trocas />
   },
 
   {
     path: "/ctt",
-    element: <Contato/>
-  }, 
-
-  {
-    path: "/priv",
-    element: <Privacidade/>
+    element: <Contato />
   },
 
   {
-    path: "/biquinis",
-    element: <Biquinis/>
-  }
+    path: "/priv",
+    element: <Privacidade />
+  },
+
+  {
+    path: "/categoria/:nome",
+    element: <Categoria />
+  },
+
+  {
+    path: "/busca/:termo",
+    element:  <PaginaBusca/>
+}
 ]);
 
 createRoot(document.getElementById('root')).render(

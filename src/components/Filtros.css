@@ -1,0 +1,15 @@
+.controles{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.controles input, .controles select {
+    padding: 12px 16px;
+    border-radius: 14px;
+    border: none;
+    font-size: 16px;
+    min-width: 220px;
+}

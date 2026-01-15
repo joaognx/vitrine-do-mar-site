@@ -5,8 +5,12 @@ import Novidades from '../../components/Novidades.jsx';
 import Rodapé from '../../components/Rodapé.jsx';
 import Topo from '../../components/Topo.jsx';
 import { StrictMode } from 'react';
+import { useEffect } from 'react';
 
 function Initial() {
+
+  useEffect (() =>{
+    document.title = "Vitrine do Mar - Início";}, []);
   return (
     <StrictMode>
       <Topo/>

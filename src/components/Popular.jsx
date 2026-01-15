@@ -1,10 +1,11 @@
 import "./Popular.css";
+import { Link } from "react-router-dom";
 
 const categorias = [
-  { id: 1, nome: "Biquínis", image: "logobege.jpeg" },
-  { id: 2, nome: "Maiôs", image: "logoazul.jpeg" },
-  { id: 3, nome: "Vestidos", image: "logobege.jpeg" },
-  { id: 4, nome: "Masculino", image: "logoazul.jpeg" }
+  { id: 1, nome: "Biquínis", image: "logobege.jpeg", link: "/categoria/biquinis" },
+  { id: 2, nome: "Maiôs", image: "logoazul.jpeg", link: "/categoria/maios" },
+  { id: 3, nome: "Vestidos", image: "logobege.jpeg", link: "/categoria/vestidos" },
+  { id: 4, nome: "Masculino", image: "logoazul.jpeg", link: "/categoria/masculino"}
 ];
 
 export default function Popular() {
@@ -17,7 +18,8 @@ export default function Popular() {
             <img src={item.image} alt={item.nome} />
             <div className="overlay">
               <h3>{item.nome}</h3>
-              <button className="btn-ver-mais">VER MAIS</button>
+              <button className="btn-ver-mais">
+                <Link to={item.link}>VER MAIS</Link></button>
             </div>
           </article>
         ))}

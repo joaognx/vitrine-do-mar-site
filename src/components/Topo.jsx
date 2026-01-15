@@ -2,23 +2,34 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { ShoppingBag } from 'lucide-react';
 import { CircleUser } from 'lucide-react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './Topo.css'
+
 
 
 function Topo() {
   const [menuAberto, setMenuAberto] = useState(false);
   const [carrinhoAberto, setCarrinhoAberto] = useState(false);
+
+  const [busca, setBusca] = useState("")
+  const navigate = useNavigate();
+
+  const handleBusca = (e) => {
+    if (e.key === 'Enter' && busca.trim() !== "") {
+      navigate(`/busca/${busca}`);
+      setBusca("");
+    }
+  };
+
   const menu = [
     { nome: "Início", link: "/" },
-    { nome: "Biquínis", link: "/biquinis" },
-    { nome: "Maiôs", link: "/maios" },
-    { nome: "Vestidos", link: "/vestidos" },
-    { nome: "Masculino", link: "/masculino" },
-    { nome: "Acessórios", link: "/acessorios" },
-    { nome: "Infantil", link: "/infantil" }
-
-  ]
+    { nome: "Biquínis", link: "/categoria/biquinis" },
+    { nome: "Maiôs", link: "/categoria/maios" },
+    { nome: "Vestidos", link: "/categoria/vestidos" },
+    { nome: "Masculino", link: "/categoria/masculino" },
+    { nome: "Acessórios", link: "/categoria/acessorios" },
+    { nome: "Infantil", link: "/categoria/infantil" }
+  ];
 
 
   useEffect(() => {
@@ -47,15 +58,18 @@ function Topo() {
             className="search"
             type="text"
             placeholder="O que você está buscando?"
+            value={busca}
+            onChange={(e) => setBusca(e.target.value)}
+            onKeyDown={handleBusca}
           />
 
 
         </div>
-        
+
         <div className="foto">
-        <Link to="/" className='center'>
-          <img src="logospng.png" alt="Vitrine do Mar" className='logo' />
-        </Link>
+          <Link to="/" className='center'>
+            <img src="/logospng.png" alt="Vitrine do Mar" className='logo' />
+          </Link>
         </div>
 
 
@@ -70,23 +84,27 @@ function Topo() {
         </div>
       </div>
 
-        <nav className={`menu ${menuAberto ? 'ativo' : ''}`}>
+      <nav className={`menu ${menuAberto ? 'ativo' : ''}`}>
 
-          {menu.map((tipo, i) => (
-            <Link
-              to={tipo.link}
-              key={i}
-              onClick={() => setMenuAberto(false)}
-            >
-              {tipo.nome}
-            </Link>
-          ))}
+        {menu.map((tipo, i) => (
+          <Link
+            to={tipo.link}
+            key={i}
+            onClick={() => setMenuAberto(false)}
+          >
+            {tipo.nome}
+          </Link>
+        ))}
 
-          <div className="search-container-mobile">
-            <input className="search-mobile" type="text" placeholder="Buscar produtos..." />
-          </div>
-        </nav>
-     
+        <div className="search-container-mobile">
+          <input className="search-mobile" type="text"
+            placeholder="O que você está buscando?"
+            value={busca}
+            onChange={(e) => setBusca(e.target.value)}
+            onKeyDown={handleBusca} />
+        </div>
+      </nav>
+
 
       {menuAberto && (
         <div
