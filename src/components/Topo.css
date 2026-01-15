@@ -54,8 +54,8 @@ body {
 
 .logo{
   max-height: 150px;        
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
   object-fit: cover;
   overflow: hidden;
   transform-origin: center;

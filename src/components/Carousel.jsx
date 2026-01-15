@@ -12,7 +12,7 @@ export default function Carousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const carouselRef = useRef(null);
 
-  // Função para rolar para um índice específico
+  
   const scrollToSlide = (index) => {
     if (carouselRef.current) {
       carouselRef.current.scrollTo({
@@ -33,15 +33,14 @@ export default function Carousel() {
     scrollToSlide(prevIndex);
   };
 
-  // Efeito do Auto-play
   useEffect(() => {
     const interval = setInterval(nextSlide, 4000);
     return () => clearInterval(interval);
-  }, [activeIndex]); // Reinicia o timer sempre que o index muda
+  }, [activeIndex]); 
 
   return (
     <div className="carousel-container">
-      {/* Botões de Navegação */}
+      
       <button className="nav-btn left" onClick={prevSlide}>❮</button>
       <button className="nav-btn right" onClick={nextSlide}>❯</button>
 
@@ -53,7 +52,7 @@ export default function Carousel() {
         ))}
       </ul>
 
-      {/* Indicadores (Dots) */}
+
       <div className="indicators">
         {images.map((_, i) => (
           <div
