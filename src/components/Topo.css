@@ -1,7 +1,9 @@
 
 html.no-scroll,
 body.no-scroll {
-  overscroll-behavior: none;
+  overflow: hidden !important;
+  height: 100% !important;
+  position: fixed; 
   width: 100%;
 }
 /*----------------------------------------------------------------------*/
@@ -51,7 +53,7 @@ body {
 }
 
 .logo{
-  max-height: 80px;        
+  max-height: 150px;        
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -136,7 +138,7 @@ body {
   }
 
   .logo {
-    max-height: 50px; 
+    max-height: 120px; 
   }
 
   .search {
@@ -153,10 +155,6 @@ body {
     height: 28px !important;
   }
 
-  .header {
-  padding-top: env(safe-area-inset-top);
-}
-
   .hamburger {
     display: block;
     z-index: 1001;
@@ -170,7 +168,7 @@ body {
     top: 0; 
     left: -100%; 
     width: 80%; 
-    height: 100svh;
+    height: 100vh;
     z-index: 1000;
     padding-top: 80px; 
     background: white;
