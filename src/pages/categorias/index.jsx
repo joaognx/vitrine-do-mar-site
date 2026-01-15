@@ -18,7 +18,6 @@ function Categoria() {
   const { nome } = useParams();
   
   const [produtos, setProdutos] = useState([]);
-  const [busca, setBusca] = useState("");
   const [categoria, setCategoria] = useState("");
 
   useEffect(() =>{
@@ -31,7 +30,6 @@ function Categoria() {
 
   const produtosFiltrados = produtos
 
-  .filter(p => p.title.toLowerCase().includes(busca.toLowerCase()))
   .filter(p => (categoria ? p.category ===  categoria : true))
 
   const chave = nome.toLowerCase();
@@ -45,14 +43,12 @@ function Categoria() {
 
   return (
     <div className="home">
-    <Topo busca={busca} setBusca={setBusca}/>
+    <Topo/>
       <main className='container-cat'>
 
         <Filtros
         
         produtos = {produtos}
-        busca = {busca}
-        setBusca= {setBusca}
         categoria = {categoria}
         setCategoria = {setCategoria}/>
 
