@@ -30,12 +30,12 @@ function Topo() {
     { nome: "Infantil", link: "/categoria/infantil" }
   ];
 
-  
+
   useEffect(() => {
     fetch('https://api.escuelajs.co/api/v1/categories')
       .then(res => res.json())
-      .then(data => {setCategories(data); setLoading(false);})
-      .catch((()=> setCategories([])))
+      .then(data => { setCategories(data); setLoading(false); })
+      .catch((() => setCategories([])))
   }, []);
 
   useEffect(() => {
@@ -92,16 +92,22 @@ function Topo() {
 
       <nav className={`menu ${menuAberto ? 'ativo' : ''}`}>
         <Link to="/" onClick={() => setMenuAberto(false)}>Início</Link>
+        {categories.length === 0 ? (
 
-        {categories.map((cat) => (
-          <Link
-            to={`/categoria/${cat.name}`}
-            key={cat.id}
-            onClick={() => setMenuAberto(false)}
-          >
-            {cat.name}
-          </Link>
-        ))}
+          [1, 2, 3, 4, 5].map(i => (
+            <div key={i} className="menu-skeleton-line"></div>
+          ))
+        ) : (
+          categories.map((cat) => (
+            <Link
+              to={`/categoria/${cat.name}`}
+              key={cat.id}
+              onClick={() => setMenuAberto(false)}
+            >
+              {cat.name}
+            </Link>
+          ))
+        )}
 
         <div className="search-container-mobile">
           <input className="search-mobile" type="text"

@@ -15,12 +15,13 @@ const categorias = {
   masculino: "Masculino",
 };
 
-// ... seus imports
 
 export default function Categoria() {
   const { nome } = useParams();
   const [produtos, setProdutos] = useState([]);
   const [categoriaSelecionada, setCategoriaSelecionada] = useState(""); 
+  const [minPreco, setMinPreco] = useState("");
+  const [maxPreco, setMaxPreco] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -40,15 +41,23 @@ export default function Categoria() {
   const chave = nome ? nome.toLowerCase() : "";
   const nomeExibicao = categorias[chave] || nome;
 
-  const produtosFiltrados = produtos.filter(p => {
-    return p.category && (
+  const produtosExibidos = produtos.filter(p => {
+    const matchCategoria = p.category && (
+      p.category.id.toString() === nome || 
       p.category.name.toLowerCase() === nome.toLowerCase()
     );
+
+    const matchMin = minPreco === "" || p.price >= parseFloat(minPreco);
+
+    
+    const matchMax = maxPreco === "" || p.price <= parseFloat(maxPreco);
+
+    return matchCategoria && matchMin && matchMax;
   });
 
   if (loading) {
     return (
-      <>
+      <div className="home">
         <Topo /> 
         <section className="nov loading-container">
           <h2 className="tit-nov">CARREGANDO...</h2>
@@ -62,7 +71,8 @@ export default function Categoria() {
             ))}
           </div>
         </section>
-      </>
+        <Rodape />
+      </div>
     );
   }
 
@@ -72,13 +82,18 @@ export default function Categoria() {
       <main className='container-cat'>
         <Filtros
           produtos={produtos}
-          categoria={typeof categoriaSelecionada === 'object' ? categoriaSelecionada.name : categoriaSelecionada}
+          categoria={categoriaSelecionada}
           setCategoria={setCategoriaSelecionada}
+          minPreco={minPreco}  
+          setMinPreco={setMinPreco}
+          maxPreco={maxPreco}
+          setMaxPreco={setMaxPreco}
         />
         
         <h1 className="titulo-categoria">{nomeExibicao}</h1>
 
-        <ListaProdutos produtos={produtosFiltrados} />
+        {/* Usamos a lista que passou por todos os filtros */}
+        <ListaProdutos produtos={produtosExibidos} />
       </main>
       <Rodape />
     </div>

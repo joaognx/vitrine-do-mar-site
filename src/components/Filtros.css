@@ -1,15 +1,98 @@
-.controles{
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
+.controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  align-items: flex-end;
+  margin-bottom: 30px;
+  border: 1px solid #eee;
 }
 
-.controles input, .controles select {
-    padding: 12px 16px;
-    border-radius: 14px;
-    border: none;
-    font-size: 16px;
-    min-width: 220px;
+.tamanhos, .preco {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.controles p {
+  margin: 0;
+  font-weight: 600;
+  color: #154374;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.controles select, 
+.controles input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1rem;
+  color: #444;
+  background-color: white;
+  transition: border-color 0.3s;
+}
+
+.controles select:focus, 
+.controles input:focus {
+  border-color: #1a365d;
+}
+
+.preco {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+.preco p:first-child {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.preco input {
+  width: 80px;
+}
+
+.menor {
+  font-weight: normal !important;
+  text-transform: lowercase !important;
+  color: #666 !important;
+}
+
+.preco button {
+  background-color: #1a365d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+  height: 42px;
+}
+
+.preco button:hover {
+  background-color: #2a4a7d;
+}
+
+/* Responsividade para Celular */
+@media (max-width: 768px) {
+  .controles {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .preco {
+    justify-content: space-between;
+  }
+
+  .preco input {
+    flex: 1; 
+    min-width: 60px;
+  }
 }

@@ -2,7 +2,7 @@
   --azul-marinho: #1a5276;
   --azul-claro: #d1f2eb;
   --cor-areia: #fcf3cf;
-  --texto: #2c3e50;
+  --texto: #154374;
   --branco: #ffffff;
 }
 
@@ -61,7 +61,6 @@
     font-size: 1.2rem;
   }
 }
-
 
 .skeleton-wrapper {
     display: flex;
